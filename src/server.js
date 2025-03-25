@@ -7,7 +7,7 @@ const mysql = require('mysql2'); // Substituindo o PostgreSQL por MySQL
 const { chromium } = require('playwright');
 const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 3306;
 
 // Middleware para processar JSON
 app.use(express.json());
@@ -31,10 +31,10 @@ app.use(session({
 
 // Configuração do pool de conexões MySQL
 const pool = mysql.createPool({
-  host: 'localhost',
+  host: 'mysql.railway.internal',
   user: 'root',
-  password: '289956Hg@#', // Substitua pela sua senha
-  database: 'banco_linha', // Substitua pelo nome do seu banco
+  password: 'pcTrgHmsQdhEjQPPMEUpfSeXkmPLdJHi', // Substitua pela sua senha
+  database: 'railway', // Substitua pelo nome do seu banco
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
