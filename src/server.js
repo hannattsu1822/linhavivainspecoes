@@ -7,7 +7,6 @@ const mysql = require('mysql2'); // Substituindo o PostgreSQL por MySQL
 const { chromium } = require('playwright');
 const cors = require('cors');
 const app = express();
-const port = 3306;
 
 // Middleware para processar JSON
 app.use(express.json());
@@ -952,6 +951,8 @@ app.get('/api/inspecoes_publico/:id', async (req, res) => {
 });
 
 // Iniciar o servidor
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
+  console.log(`🔗 Acesse: https://insptxt-production.up.railway.app/login`);
 });
