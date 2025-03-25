@@ -2,9 +2,9 @@ const { Pool } = require('pg');
 
 const pool = new Pool({
   user: 'root',
-  host: 'localhost',
-  database: 'banco_linha',
-  password: '289956Hg@#',
+  host: 'mysql.railway.internal',
+  database: 'railway',
+  password: 'pcTrgHmsQdhEjQPPMEUpfSeXkmPLdJHi',
   port: 33006,
 });
 
