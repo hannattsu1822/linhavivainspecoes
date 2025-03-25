@@ -31,9 +31,9 @@ app.use(session({
 
 // Configuração do pool de conexões MySQL
 const pool = mysql.createPool({
-  host: 'mysql.railway.internal',
+  host: 'shortline.proxy.rlwy.net',
   user: 'root',
-  password: 'pcTrgHmsQdhEjQPPMEUpfSeXkmPLdJHi', // Substitua pela sua senha
+  password: 'aUhxdnXKYXFdAqepSKQpYcMgUntBvfTa', // Substitua pela sua senha
   database: 'railway', // Substitua pelo nome do seu banco
   waitForConnections: true,
   connectionLimit: 10,
