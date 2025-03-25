@@ -43,9 +43,6 @@ const pool = mysql.createPool({
 
 const promisePool = pool.promise();
 
-// Promisify para usar async/await com MySQL
-const promisePool = pool.promise();
-
 // Função para converter Excel Serial Date para data legível
 function excelSerialDateToJSDate(serial) {
   const utcDays = Math.floor(serial - 25569);
