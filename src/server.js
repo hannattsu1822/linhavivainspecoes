@@ -31,13 +31,17 @@ app.use(session({
 // Configuração do pool de conexões MySQL
 const pool = mysql.createPool({
   host: 'shortline.proxy.rlwy.net',
+  port: 31056,
   user: 'root',
-  password: 'aUhxdnXKYXFdAqepSKQpYcMgUntBvfTa', // Substitua pela sua senha
-  database: 'railway', // Substitua pelo nome do seu banco
+  password: 'aUhxdnXKYXFdAqepSKQpYcMgUntBvfTa',
+  database: 'railway',
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  ssl: { rejectUnauthorized: false } // Railway exige isso
 });
+
+const promisePool = pool.promise();
 
 // Promisify para usar async/await com MySQL
 const promisePool = pool.promise();
